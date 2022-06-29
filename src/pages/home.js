@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './home.css';
+import Header from '../components/Header';
 
 function Home() {
 
@@ -14,7 +16,8 @@ function Home() {
 
   return (
     
-      <div>
+      <div className='home'>
+        <Header />
         {data.map((item) =>
        <div key={item.id}>
         {item.name}

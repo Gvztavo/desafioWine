@@ -1,0 +1,25 @@
+.header{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  height: 90px;
+  box-shadow: 5px 3px #888888;
+}
+
+b{
+  margin: 0px 10px;
+}
+
+.logo{
+  height: 67px;
+  width: 200px;
+}
+
+.perfil{
+  margin-right:50px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
