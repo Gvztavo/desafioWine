@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './home.css';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
   const [ data, setData ] = useState([]);
   const [ itensPerPage] = useState(9);
   const [ currentPage, setCurrentPage ] = useState(0);
-  const [ filterItems, setFilterItems] = useState();
 
   useEffect(() => {
     fetch('https://wine-back-test.herokuapp.com/products')
@@ -32,11 +32,25 @@ function Home() {
       else if(event.target.value == 200){
         return itens.price >=200 && itens.price <= 500;
       }
-      return itens.price >500;
+      return itens.price > 500;
      
     });
     setData(filtered);
-    console.log(filtered)
+  }
+
+  const Onclickss = (event) => {
+    let saveId = (event.target.id)
+    let product='';
+
+     const saveItem = data.filter(itens => {
+      if(itens.id == saveId)
+      return product = itens;
+    })
+    console.log(saveId)
+
+    console.log(product)
+
+    localStorage.setItem('product', JSON.stringify(product))
   }
 
 
@@ -95,7 +109,15 @@ function Home() {
         
         <p>{`Sócio WINE R$${item.priceMember}`}</p>
         <p>{`NÃO SOCIO R$${item.price}`}</p>
-        <button>Adicionar</button>
+
+        <Link to ={'/product'}>
+        <button
+        id={item.id}
+        onClick={Onclickss}>
+          Adicionar
+        </button>
+        </Link>
+
        </div> )}
         </div>
         </div>
