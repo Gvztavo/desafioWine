@@ -7,7 +7,7 @@ function Home() {
   const [ data, setData ] = useState([]);
   const [ itensPerPage] = useState(9);
   const [ currentPage, setCurrentPage ] = useState(0);
-  const [ filterItems, setFilterItems] = useState(500);
+  const [ filterItems, setFilterItems] = useState();
 
   useEffect(() => {
     fetch('https://wine-back-test.herokuapp.com/products')
@@ -25,7 +25,14 @@ function Home() {
   //Filtro
   const handleChange = (event) => {
     const filtered = data.filter(itens => {
-      return itens.price <= event.target.value;
+
+      if(event.target.value == 100){
+        return itens.price >=100 && itens.price <= 200;
+      }
+      else if(event.target.value == 200){
+        return itens.price >=200 && itens.price <= 500;
+      }
+      return itens.price >500;
      
     });
     setData(filtered);
