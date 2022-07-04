@@ -33,5 +33,14 @@
 
 
 .found {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.pag{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
