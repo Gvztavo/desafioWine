@@ -38,7 +38,7 @@ function Home() {
     setData(filtered);
   }
 
-  const Onclickss = (event) => {
+  const clickCount = (event) => {
     let saveId = (event.target.id)
     let product='';
 
@@ -49,6 +49,8 @@ function Home() {
     console.log(saveId)
 
     console.log(product)
+
+    console.log(saveItem);
 
     localStorage.setItem('product', JSON.stringify(product))
   }
@@ -113,7 +115,7 @@ function Home() {
         <Link to ={'/product'}>
         <button
         id={item.id}
-        onClick={Onclickss}>
+        onClick={clickCount}>
           Adicionar
         </button>
         </Link>

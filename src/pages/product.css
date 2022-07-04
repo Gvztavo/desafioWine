@@ -1,0 +1,17 @@
+.productPage{
+  background-color: #DEDEDE;
+  height: 100vh;
+}
+
+.contProduct{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productArea{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding-top: 100px;
+}

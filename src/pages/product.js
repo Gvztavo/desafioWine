@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "../components/Header";
+import '../pages/product.css';
 
 function Product () {
 
@@ -12,16 +14,21 @@ function Product () {
 
 
   return(
-    <div>
+    <div className="productPage">
+       <Header />
+      <div className="contProduct">
       <img src={idItem.image}/>
+      <div className="productArea">
+
+  
       <h1>{idItem.name}</h1>
-      <h3>{idItem.country} {idItem.classification} {idItem.size}</h3>
+      <p>{idItem.country} {idItem.classification} {idItem.size}</p>
       <p>{`R$${idItem.priceMember}`}</p>
       <p>{`NÃO SOCIO R$${idItem.price}/UN.`}</p>
       <h2>Comentario Sommelier</h2>
       <p>{idItem.sommelierComment}</p>
-
-      <button
+      
+      <div><button
       onClick={()=>{setValor(valor +1)}}>
         +
       </button>
@@ -40,7 +47,10 @@ function Product () {
       <button>
         Adicionar
       </button>
-      
+      </div>
+      </div>
+
+      </div>
     </div>
   )
 
